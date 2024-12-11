@@ -5,12 +5,12 @@
 replicaCount: 1
 
 owncloud:
-  domain: owncloud.chart.example
+  domain: nc.stratocloud.eu
   username: owncloud
-  password: owncloud
+  password: owncloud123
 
 mariadb:
-  enabled: false
+  enabled: true
 
 externalDatabase:
   type: ""
@@ -23,7 +23,7 @@ externalDatabase:
 persistence:
   enabled: true
   owncloud:
-    accessMode: ReadWriteOnce
+    accessMode: ReadWriteMany
     size: 8Gi
     nfs: {}
 

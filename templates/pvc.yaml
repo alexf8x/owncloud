@@ -7,11 +7,11 @@ spec:
   accessModes:
     - ReadWriteOnce
   capacity:
-    storage: 10Gi
+    storage: 100Gi
   nfs:
     server: {{ .Values.persistence.owncloud.nfs.server }}
     path: {{ .Values.persistence.owncloud.nfs.path }}
-{{- end -}}
+{{end}}
 ---
 {{- if .Values.persistence.enabled -}}
 apiVersion: v1
@@ -20,9 +20,9 @@ metadata:
   name: {{ include "owncloud.fullname" . }}
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 10Gi
-  storageClassName: longhorn
+      storage: 100Gi
+  storageClassName: standard
 {{- end -}}
